@@ -15,8 +15,8 @@ import NGOPostsNew from './Components/Dashboards/NGOPostsNew';
 function App() {
     return (
         <main>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <Link className="navbar-brand" to=''>Chat</Link>
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
+                <Link className="navbar-brand" to=''>U&I</Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -41,7 +41,7 @@ function App() {
                 </div>
             </nav>
             <Switch>
-                <Route exact path="/" component={Home} exact />
+                <Route exact path="/" component={Home} />
                 <Route exact path="/auth" component={Auth} />
                 <Route exact path="/profile" component={Profile} />
                 <Route exact path="/profile/new" component={ProfileNew} />

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { render } from '@testing-library/react';
 import {db} from '../firebase';
+import 'bootstrap/dist/css/bootstrap.css';
 
 class Profile extends Component {
 
@@ -50,8 +51,41 @@ class Profile extends Component {
     render() {
         return (
             <div>
-                {this.state.name}
-                {this.state.email}
+               <div className="container d-flex justify-content-center">
+                   <div class="row">
+                        <div class="card">
+                            <div class="card-header">
+                                Account Details
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label for="staticEmail" class="col-sm-4 col-form-label">Email</label>
+                                    <div class="col-sm-8">
+                                      <input type="text" disabled readonly class="form-control" id="staticEmail" />
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="inputPassword" class="col-sm-4 col-form-label">Password</label>
+                                    <div class="col-sm-8">
+                                      <input type="password" class="form-control" />
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="staticEmail" class="col-sm-4 col-form-label">Email</label>
+                                    <div class="col-sm-8">
+                                      <input type="text"  readonly class="form-control" id="staticEmail" value="email@example.com"/>
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="staticEmail" class="col-sm-4 col-form-label">Email</label>
+                                    <div class="col-sm-8">
+                                      <input type="text" disabled readonly class="form-control" id="staticEmail" value="email@example.com"/>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                   </div>
+               </div>
             </div>
         );
     }
