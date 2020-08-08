@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { render } from '@testing-library/react';
-import db from '../firebase';
+import {db} from '../firebase';
 
 class Profile extends Component {
 

@@ -7,7 +7,7 @@ class DonorPosts extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            donor_posts: []
+            donor_posts: [],
         }
     }
 
@@ -15,12 +15,12 @@ class DonorPosts extends Component {
         db.collection('donor_posts').get().then((querySnapshot) => {
             let donor_posts = [];
             querySnapshot.forEach((doc) => {
-                let post;
+                let post = {};
                 post = doc.data();
-                db.collection('donor_posts').doc(doc.id).collection('items').get().then((querySnap) => {
-                    const data = querySnap.docs.map(doc => doc.data());
-                    post.items = data;
-                });
+                // db.collection('donor_posts').doc(doc.id).collection('items').get().then((querySnap) => {
+                //     let data = querySnap.docs.map(doc => doc.data());
+                //     post.items = data;
+                // });
                 donor_posts.push(post);
             })
             this.setState({donor_posts: donor_posts});
@@ -29,14 +29,17 @@ class DonorPosts extends Component {
 
     render() {
         let posts = this.state.donor_posts;
-        console.log(posts);
         return (
             <ul>
                 {
                     posts.map((post) => {
                     return (
-                        <div key={post.description}>
-                            {post.donor_id}. {post.item.title}
+                        <div key={post.timestamp.seconds}>
+                            <ul>{post.title}</ul>
+                            <ul>{post.description}</ul>
+                            <ul>{post.img_url}</ul>
+                            <ul>{post.video_url}</ul>
+                            <ul>{post.amount}</ul>
                         </div>
                     )})
                 }
