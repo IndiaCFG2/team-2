@@ -9,6 +9,8 @@ import ProfileNew from './Components/Profile/ProfileNew';
 import DonorPosts from './Components/Dashboards/DonorPost';
 import NGOPosts from './Components/Dashboards/NGOPosts';
 import 'bootstrap/dist/css/bootstrap.css';
+import DonorPostsNew from './Components/Dashboards/DonorPostsNew';
+import NGOPostsNew from './Components/Dashboards/NGOPostsNew';
 
 function App() {
     return (
@@ -39,13 +41,15 @@ function App() {
                 </div>
             </nav>
             <Switch>
-                <Route path="/" component={Home} exact />
-                <Route path="/auth" component={Auth} />
-                {/* <Route path="/profile" component={Profile} /> */}
-                <Route path="/profile/new" component={ProfileNew} />
-                <Route path="/chat" component={Chat} />
-                <Route path="/donor/posts" component={DonorPosts} />
-                <Route path="/ngo/posts" component={NGOPosts} />
+                <Route exact path="/" component={Home} exact />
+                <Route exact path="/auth" component={Auth} />
+                <Route exact path="/profile" component={Profile} />
+                <Route exact path="/profile/new" component={ProfileNew} />
+                <Route exact path="/chat" component={Chat} />
+                <Route exact path="/donor/posts" component={DonorPosts} />
+                <Route exact path="/ngo/posts" component={NGOPosts} />
+                <Route exact path="/donor/posts/new" component={DonorPostsNew} />
+                <Route exact path="/ngo/posts/new" component={NGOPostsNew} />
             </Switch>
         </main>
     );

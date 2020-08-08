@@ -34,7 +34,7 @@ class DonorPosts extends Component {
                 {
                     posts.map((post) => {
                     return (
-                        <div key={post.timestamp.seconds}>
+                        <div key={post.title}>
                             <ul>{post.title}</ul>
                             <ul>{post.description}</ul>
                             <ul>{post.img_url}</ul>
