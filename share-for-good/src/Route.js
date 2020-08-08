@@ -5,16 +5,16 @@ import Auth from './Components/Auth/Auth';
 import Chat from './Components/Chat/Chat';
 
 
-function App() {
+function Routes() {
     return (
         <main>
             <Switch>
                 <Route path="/" component={Home} exact />
-                <Route path="/auth" component={Auth} />
+                <Route path="/login" component={Auth} />
                 <Route path="/chat" component={Chat} />
             </Switch>
         </main>
     );
 }
 
-export default App;
+export default Routes;
