@@ -11,6 +11,7 @@ import NGOPosts from './Components/Dashboards/NGOPosts';
 import 'bootstrap/dist/css/bootstrap.css';
 import DonorPostsNew from './Components/Dashboards/DonorPostsNew';
 import NGOPostsNew from './Components/Dashboards/NGOPostsNew';
+import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
     return (
@@ -53,6 +54,8 @@ function App() {
                 <Route exact path="/ngo/posts" component={NGOPosts} />
                 <Route exact path="/donor/posts/new" component={DonorPostsNew} />
                 <Route exact path="/ngo/posts/new" component={NGOPostsNew} />
+
+                <Route component={() => (<h1 className="text d-flex justify-content-center">404 Not found </h1>)} />
             </Switch>
         </main>
     );
