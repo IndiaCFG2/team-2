@@ -9,6 +9,8 @@ import ProfileNew from './Components/Profile/ProfileNew';
 import DonorPosts from './Components/Dashboards/DonorPost';
 import NGOPosts from './Components/Dashboards/NGOPosts';
 import 'bootstrap/dist/css/bootstrap.css';
+import DonorPostsNew from './Components/Dashboards/DonorPostsNew';
+import NGOPostsNew from './Components/Dashboards/NGOPostsNew';
 
 function App() {
     return (
@@ -20,20 +22,23 @@ function App() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ml-auto">
-                        <li className="nav-item active">
-                            <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
+                        <li className="nav-item">
+                            <a className="nav-link" href="/">Home <span className="sr-only"></span></a>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to='/chat'>Chat</Link>
                         </li>
-                        <li className="nav-item dropdown">
+                        <li className="nav-item">
+                            <Link className="nav-link" to='/profile'>Profile</Link>
+                        </li>
+                        {/* <li className="nav-item dropdown">
                             <Link className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" to='/profile'>Profile</Link>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <a className="dropdown-item" href="/profile">Profile</a>
                                 <a className="dropdown-item" href="/">Change Password</a>
                                 <a className="dropdown-item" href="/">Logout</a>
                             </div>
-                        </li>
+                        </li> */}
 
                     </ul>
                 </div>
@@ -46,6 +51,8 @@ function App() {
                 <Route exact path="/chat" component={Chat} />
                 <Route exact path="/donor/posts" component={DonorPosts} />
                 <Route exact path="/ngo/posts" component={NGOPosts} />
+                <Route exact path="/donor/posts/new" component={DonorPostsNew} />
+                <Route exact path="/ngo/posts/new" component={NGOPostsNew} />
             </Switch>
         </main>
     );
