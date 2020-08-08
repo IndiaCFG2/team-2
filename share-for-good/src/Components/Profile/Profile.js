@@ -59,27 +59,27 @@ class Profile extends Component {
                             </div>
                             <div class="card-body">
                                 <div class="form-group row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Email</label>
+                                    <label for="UserName" class="col-sm-4 col-form-label">Name</label>
                                     <div class="col-sm-8">
-                                      <input type="text" disabled readonly class="form-control" id="staticEmail" />
+                                      <input type="text" disabled readonly class="form-control" id="UserName" value={this.state.name} />
                                     </div>
                                   </div>
                                   <div class="form-group row">
-                                    <label for="inputPassword" class="col-sm-4 col-form-label">Password</label>
+                                    <label for="inputEmail" class="col-sm-4 col-form-label">Email</label>
                                     <div class="col-sm-8">
-                                      <input type="password" class="form-control" />
+                                      <input type="text" disabled class="form-control" value={this.state.email} />
                                     </div>
                                   </div>
                                   <div class="form-group row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Email</label>
+                                    <label for="staticPhone" class="col-sm-4 col-form-label">Phone</label>
                                     <div class="col-sm-8">
-                                      <input type="text"  readonly class="form-control" id="staticEmail" value="email@example.com"/>
+                                      <input type="text" disabled readonly class="form-control" id="staticPhone" value={this.state.phone}/>
                                     </div>
                                   </div>
                                   <div class="form-group row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Email</label>
+                                    <label for="staticAddress" class="col-sm-4 col-form-label">Address</label>
                                     <div class="col-sm-8">
-                                      <input type="text" disabled readonly class="form-control" id="staticEmail" value="email@example.com"/>
+                                      <input type="text" disabled readonly class="form-control" id="staticAddress" value={this.state.address}/>
                                     </div>
                                   </div>
                             </div>
