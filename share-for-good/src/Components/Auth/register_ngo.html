@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registration Form</title>
+	<link rel="stylesheet" href="register_ngo.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="title">
+      Registration Form NGO
+    </div>
+    <div class="form">
+       <div class="inputfield">
+          <label> Name</label>
+          <input type="text" class="input">
+       </div>  
+       <div class="inputfield">
+        <label>Email Address</label>
+        <input type="text" class="input">
+     </div> 
+        <!-- <div class="inputfield">
+          <label>Last Name</label>
+          <input type="text" class="input">
+       </div>   -->
+       <div class="inputfield">
+          <label>Password</label>
+          <input type="password" class="input">
+       </div>  
+      <div class="inputfield">
+          <label>Confirm Password</label>
+          <input type="password" class="input">
+       </div> 
+        <!-- <div class="inputfield">
+          <label>Gender</label>
+          <div class="custom_select">
+            <select>
+              <option value="">Select</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+       </div>  -->
+        
+      <div class="inputfield">
+          <label>Phone Number</label>
+          <input type="text" class="input">
+       </div>
+       <div class="inputfield">
+        <label>Pan Number</label>
+        <input type="text" class="input">
+     </div> 
+     <div class="inputfield">
+        <label>Support Doc 1</label>
+        <input type="file" class="input" name="filename1">
+     </div> 
+     <div class="inputfield">
+        <label>Support Doc 2</label>
+        <input type="file" class="input" name="filename2">
+     </div> 
+     <div class="inputfield">
+        <label>Support Doc 2</label>
+        <input type="file" class="input" name="filename3">
+     </div> 
+       
+      <!-- <div class="inputfield">
+          <label>Address</label>
+          <textarea class="textarea"></textarea>
+       </div>  -->
+      <!-- <div class="inputfield">
+          <label>Postal Code</label>
+          <input type="text" class="input">
+       </div>  -->
+      <div class="inputfield terms">
+          <label class="check">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <p>Agreed to terms and conditions</p>
+       </div> 
+      <div class="inputfield">
+        <input type="submit" value="Register" class="btn">
+      </div>
+    </div>
+</div>	
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+
+<script>
+ // Your web app's Firebase configuration
+ var firebaseConfig = {
+   apiKey: "",
+   authDomain: "u-and-i-cfg.firebaseapp.com",
+   databaseURL: "https://u-and-i-cfg.firebaseio.com",
+   projectId: "u-and-i-cfg",
+   storageBucket: "u-and-i-cfg.appspot.com",
+   messagingSenderId: "834989589049",
+   appId: "1:834989589049:web:3bac3ad26e30bdd288c3e8",
+   measurementId: "G-SEZCF7HLXZ"
+ };
+ // Initialize Firebase
+ firebase.initializeApp(firebaseConfig);
+ firebase.analytics();
+</script>
+ 
+
+	
+</body>
+</html>
