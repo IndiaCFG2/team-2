@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
-import { db } from '../firebase';
+import { db, auth } from '../firebase';
 import { render } from '@testing-library/react';
 
-<<<<<<< HEAD
 class DonorPostsNew extends Component {
     
-=======
-class DonorPosts extends Component {
-
->>>>>>> 7ac88358056d9a163a38cd696c92b462850124a2
     constructor(props) {
         super(props);
         this.state = {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {db} from '../firebase';
+import {db, auth} from '../firebase';
 import { render } from '@testing-library/react';
 
 class DonorPosts extends Component {

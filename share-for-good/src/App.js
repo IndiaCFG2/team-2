@@ -4,6 +4,7 @@ import Home from './Components/Home/Home';
 import Auth from './Components/Auth/Auth';
 import Chat from './Components/Chat/Chat';
 import Profile from './Components/Profile/Profile';
+import { Link } from 'react-router-dom'
 import ProfileNew from './Components/Profile/ProfileNew';
 import DonorPosts from './Components/Dashboards/DonorPost';
 import NGOPosts from './Components/Dashboards/NGOPosts';
@@ -12,27 +13,25 @@ import 'bootstrap/dist/css/bootstrap.css';
 function App() {
     return (
         <main>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="/">U&I</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <Link className="navbar-brand" to=''>Chat</Link>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                <div className="collapse navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav ml-auto">
+                        <li className="nav-item active">
+                            <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/chat">Chat</a>
+                        <li className="nav-item">
+                            <Link className="nav-link" to='/chat'>Chat</Link>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Account
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="/profile">Profile</a>
-                                <a class="dropdown-item" href="/">Change Password</a>
-                                <a class="dropdown-item" href="/">Logout</a>
+                        <li className="nav-item dropdown">
+                            <Link className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" to='/profile'>Profile</Link>
+                            <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a className="dropdown-item" href="/profile">Profile</a>
+                                <a className="dropdown-item" href="/">Change Password</a>
+                                <a className="dropdown-item" href="/">Logout</a>
                             </div>
                         </li>
 
