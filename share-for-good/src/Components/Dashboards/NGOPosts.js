@@ -18,10 +18,10 @@ class NGOPosts extends Component {
             querySnapshot.forEach((doc) => {
                 let post;
                 post = doc.data();
-                db.collection('ngo_posts').doc(doc.id).collection('items').get().then((querySnap) => {
-                    const data = querySnap.docs.map(doc => doc.data());
-                    post.items = data;
-                });
+                // db.collection('ngo_posts').doc(doc.id).collection('items').get().then((querySnap) => {
+                //     const data = querySnap.docs.map(doc => doc.data());
+                //     post.items = data;
+                // });
                 ngo_posts.push(post);
             })
             this.setState({ngo_posts: ngo_posts});
@@ -36,8 +36,12 @@ class NGOPosts extends Component {
                 {
                     posts.map((post) => {
                     return (
-                        <div key={post.description}>
-                            {post.ngo_id}
+                        <div key={post.timestamp.seconds}>
+                            <ul>{post.title}</ul>
+                            <ul>{post.description}</ul>
+                            <ul>{post.img_url}</ul>
+                            <ul>{post.video_url}</ul>
+                            <ul>{post.amount}</ul>
                         </div>
                     )})
                 }

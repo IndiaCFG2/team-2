@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { render } from '@testing-library/react';
-import { db } from '../firebase';
-
+import {db} from '../firebase';
+import 'bootstrap/dist/css/bootstrap.css';
 
 class Profile extends Component {
 
@@ -51,53 +51,41 @@ class Profile extends Component {
     render() {
         return (
             <div>
-                <div>
-                    <div className="container">
-                        <div className="card text-center">
-                            <div className="card-header">
+               <div className="container d-flex justify-content-center">
+                   <div class="row">
+                        <div class="card">
+                            <div class="card-header">
                                 Account Details
-                    </div>
-                            <div className="card-body">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-6 col-lg-3">
-                                        <h5 className="">Name</h5>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6">
-                                        <h5>{this.state.name}</h5>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-6 col-lg-3">
-                                        <h5>Phone</h5>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6">
-                                        <h5>{this.state.email}</h5>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-6 col-lg-3">
-                                        <h5>Email</h5>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6">
-                                        <h5>{this.state.email}</h5>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-6 col-lg-2">
-                                        <h5>Address</h5>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6">
-                                        <h5>{this.state.address}</h5>
-                                    </div>
-                                </div>
-
                             </div>
-                            <div className="card-footer text-muted">
-                                2 days ago
-                    </div>
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label for="staticEmail" class="col-sm-4 col-form-label">Email</label>
+                                    <div class="col-sm-8">
+                                      <input type="text" disabled readonly class="form-control" id="staticEmail" />
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="inputPassword" class="col-sm-4 col-form-label">Password</label>
+                                    <div class="col-sm-8">
+                                      <input type="password" class="form-control" />
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="staticEmail" class="col-sm-4 col-form-label">Email</label>
+                                    <div class="col-sm-8">
+                                      <input type="text"  readonly class="form-control" id="staticEmail" value="email@example.com"/>
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="staticEmail" class="col-sm-4 col-form-label">Email</label>
+                                    <div class="col-sm-8">
+                                      <input type="text" disabled readonly class="form-control" id="staticEmail" value="email@example.com"/>
+                                    </div>
+                                  </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                   </div>
+               </div>
             </div>
         );
     }
