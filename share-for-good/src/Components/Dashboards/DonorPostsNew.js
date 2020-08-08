@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import db from '../firebase';
+import { db } from '../firebase';
 import { render } from '@testing-library/react';
 
-class DonorPosts extends Component {
+class DonorPostsNew extends Component {
     
     constructor(props) {
         super(props);
@@ -48,4 +48,4 @@ class DonorPosts extends Component {
 
 }
 
-export default DonorPosts;
+export default DonorPostsNew;
