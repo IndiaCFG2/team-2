@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { render } from '@testing-library/react';
-import db from '../firebase';
+import { db } from '../firebase';
+
 
 class Profile extends Component {
 
@@ -50,8 +51,53 @@ class Profile extends Component {
     render() {
         return (
             <div>
-                {this.state.name}
-                {this.state.email}
+                <div>
+                    <div className="container">
+                        <div className="card text-center">
+                            <div className="card-header">
+                                Account Details
+                    </div>
+                            <div className="card-body">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-lg-3">
+                                        <h5 className="">Name</h5>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6">
+                                        <h5>{this.state.name}</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-lg-3">
+                                        <h5>Phone</h5>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6">
+                                        <h5>{this.state.email}</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-lg-3">
+                                        <h5>Email</h5>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6">
+                                        <h5>{this.state.email}</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-lg-2">
+                                        <h5>Address</h5>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6">
+                                        <h5>{this.state.address}</h5>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div className="card-footer text-muted">
+                                2 days ago
+                    </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }

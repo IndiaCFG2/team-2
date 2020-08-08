@@ -14,7 +14,7 @@ function App() {
     return (
         <main>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <Link className="navbar-brand" to=''>Chat</Link>
+                <Link className="navbar-brand" to=''>U&I</Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -39,13 +39,13 @@ function App() {
                 </div>
             </nav>
             <Switch>
-                <Route path="/" component={Home} exact />
-                <Route path="/auth" component={Auth} />
-                {/* <Route path="/profile" component={Profile} /> */}
-                <Route path="/profile/new" component={ProfileNew} />
-                <Route path="/chat" component={Chat} />
-                <Route path="/donor/posts" component={DonorPosts} />
-                <Route path="/ngo/posts" component={NGOPosts} />
+                <Route exact path="/" component={Home} />
+                <Route exact path="/auth" component={Auth} />
+                <Route exact path="/profile" component={Profile} />
+                <Route exact path="/profile/new" component={ProfileNew} />
+                <Route exact path="/chat" component={Chat} />
+                <Route exact path="/donor/posts" component={DonorPosts} />
+                <Route exact path="/ngo/posts" component={NGOPosts} />
             </Switch>
         </main>
     );
