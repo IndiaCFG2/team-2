@@ -17,13 +17,14 @@ class DonorPostsNew extends Component {
             quantity: '',
             description: '',
             donor_id: '',
+            donor_name: '',
             category: ''
         }
     }
 
     componentDidMount () {
         if(auth.currentUser)
-            this.setState({donor_id: auth.currentUser.uid});
+            this.setState({donor_id: auth.currentUser.uid, donor_name: auth.currentUser.displayName});
     }
 
     handleImageChange = e => {
@@ -69,7 +70,8 @@ class DonorPostsNew extends Component {
                 quantity: this.state.quantity,
                 description: this.state.description,
                 timestamp: firebase.database.ServerValue.TIMESTAMP,
-                category: this.state.category
+                category: this.state.category,
+                posted_by: this.state.donor_name
             }).then((docRef) => {
                 this.props.history.push('/donor/posts');
             })

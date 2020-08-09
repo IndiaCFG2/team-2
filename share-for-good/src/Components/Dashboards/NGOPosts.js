@@ -38,13 +38,24 @@ class NGOPosts extends Component {
                 {
                     posts.map((post) => {
                     return (
-                        <div key={post.title}>
-                            <ul>{post.title}</ul>
-                            <ul>{post.description}</ul>
-                            <ul>{post.img_url}</ul>
-                            <ul>{post.video_url}</ul>
-                            <ul>{post.amount}</ul>
+                        <div class="col-md-4">
+                        <div class="card" style={{ width: "18rem" }}>
+                            <img class="card-img-top" src={post.img_url} style={{ width: "100px", height: "100px" }}
+                                alt="Card image cap" />
+                            <div class="card-body">
+                                <h5 class="card-title">{post.title}</h5>
+                                <p class="card-text">{post.description}</p>
+                                <p class="card-text">{post.posted_by}</p>
+                            </div>
                         </div>
+                    </div>
+                        // <div key={post.title}>
+                        //     <ul>{post.title}</ul>
+                        //     <ul>{post.description}</ul>
+                        //     <ul>{post.img_url}</ul>
+                        //     <ul>{post.video_url}</ul>
+                        //     <ul>{post.amount}</ul>
+                        // </div>
                     )})
                 }
             </ul>

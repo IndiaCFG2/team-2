@@ -47,7 +47,7 @@ class Profile extends Component {
                             </div>
                             <div class="card-body">
                                 <div class="form-group row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Email</label>
+                                    <label for="UserName" class="col-sm-4 col-form-label">Name</label>
                                     <div class="col-sm-8">
                                       <input type="text" disabled value={this.state.email} readonly class="form-control" id="staticEmail" />
                                     </div>

@@ -16,15 +16,16 @@ class NGOPostsNew extends Component {
             video_url: '',
             quantity: '',
             description: '',
-            donor_id: '',
-            category: ''
+            ngo_id: '',
+            category: '',
+            ngo_name: ''
         }
     }
 
     componentDidMount () {
         console.log(firebase.database.ServerValue.TIMESTAMP);
         if(auth.currentUser)
-            this.setState({donor_id: auth.currentUser.uid});
+            this.setState({ngo_id: auth.currentUser.uid, ngo_name: auth.currentUser.displayName});
     }
 
     handleImageChange = e => {
@@ -63,14 +64,15 @@ class NGOPostsNew extends Component {
         console.log(this.state);
         db.collection('ngo_posts')
             .add({
-                donor_id: this.state.donor_id,
+                ngo_id: this.state.ngo_id,
                 title: this.state.title,
                 img_url: this.state.img_url,
                 video_url: this.state.video_url,
                 quantity: this.state.quantity,
                 description: this.state.description,
                 timestamp: firebase.database.ServerValue.TIMESTAMP,
-                category: this.state.category
+                category: this.state.category,
+                posted_by: this.state.ngo_name
             }).then((docRef) => {
                 this.props.history.push('/ngo/posts');
             })

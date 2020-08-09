@@ -26,6 +26,8 @@ function App() {
                 <Route exact path="/ngo/posts" component={NGOPosts} />
                 <Route exact path="/donor/posts/new" component={DonorPostsNew} />
                 <Route exact path="/ngo/posts/new" component={NGOPostsNew} />
+
+                <Route component={() => (<h1 className="text d-flex justify-content-center">404 Not found </h1>)} />
             </Switch>
         </main>
     );
