@@ -53,7 +53,7 @@ class Profile extends Component {
                                     </div>
                                   </div>
                                   <div class="form-group row">
-                                    <label for="inputPassword" class="col-sm-4 col-form-label">Name</label>
+                                    <label for="inputPassword" class="col-sm-4 col-form-label">Email</label>
                                     <div class="col-sm-8">
                                       <input type="text" value={this.state.name} class="form-control" />
                                     </div>
