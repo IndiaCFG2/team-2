@@ -4,80 +4,91 @@ import { auth } from '../firebase';
 import Home from '../Home/Home'
 import { render } from '@testing-library/react';
 import './style.css';
+import img from './sharing_is_caring.jpg'
 
 class Auth extends Component {
 
-    constructor(props) {
-        super(props);
-        this.googleProvider = new firebase.auth.GoogleAuthProvider();
+constructor(props) {
+super(props);
+this.googleProvider = new firebase.auth.GoogleAuthProvider();
 
-        this.state = {
-            loggedIn: false,
-            userName: '',
-            userEmail: '',
-        }
-    }
+this.state = {
+loggedIn: false,
+userName: '',
+userEmail: '',
+}
+}
 
-    componentDidMount() {
-        this.getUser();
-    }
+componentDidMount() {
+this.getUser();
+}
 
-    doSignInWithGoogle = () => {
-        auth.setPersistence(firebase.auth.Auth.Persistence.SESSION)
-            .then(() => {
-                auth.signInWithPopup(this.googleProvider)
-                    .then(socialAuthUser => {
-                        console.log(socialAuthUser);
-                        this.setState({
-                            userName: socialAuthUser.user.displayName,
-                            userEmail: socialAuthUser.user.email,
-                            userId: socialAuthUser.user.uid
-                        }, () => {
-                            this.props.history.push({
-                                pathname: '/profile/new',
-                                search: '?query=abc',
-                                state: { details: this.state }
-                            })
-                        });
-                    })
-                    .catch(error => {
-                        console.log(error);
-                    });;
-            })
-            .catch(function (error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-            });
-    }
+doSignInWithGoogle = () => {
+auth.setPersistence(firebase.auth.Auth.Persistence.SESSION)
+.then(() => {
+auth.signInWithPopup(this.googleProvider)
+.then(socialAuthUser => {
+console.log(socialAuthUser);
+this.setState({
+userName: socialAuthUser.user.displayName,
+userEmail: socialAuthUser.user.email,
+userId: socialAuthUser.user.uid
+}, () => {
+this.props.history.push({
+pathname: '/profile/new',
+search: '?query=abc',
+state: { details: this.state }
+})
+});
+})
+.catch(error => {
+console.log(error);
+});;
+})
+.catch(function (error) {
+// Handle Errors here.
+var errorCode = error.code;
+var errorMessage = error.message;
+});
+}
 
-    doSignOut = () => auth.signOut();
+doSignOut = () => auth.signOut();
 
-    getUser() {
-        if (auth.currentUser == null) {
-            this.setState({ loggedIn: false });
-        } else {
-            this.setState({
-                loggedIn: true,
-                userEmail: auth.currentUser.email,
-                userName: auth.currentUser.userName,
-                userID: auth.currentUser.uid,
-            })
-        }
-    }
+getUser() {
+if (auth.currentUser == null) {
+this.setState({ loggedIn: false });
+} else {
+this.setState({
+loggedIn: true,
+userEmail: auth.currentUser.email,
+userName: auth.currentUser.userName,
+userID: auth.currentUser.uid,
+})
+}
+}
 
-    render() {
-        return (
-            <div>
-                {this.state.loggedIn ?
-                    <Home />
-                    :
-                    <button onClick={this.doSignInWithGoogle}>Sign In with Google</button>
-                    
-                }
+render() {
+return (
+<div>
+    {this.state.loggedIn ?
+    <Home />
+    :
+    <div>
+        <div class="container d-flex justify-content-center">
+            <div class="row ">
+                <div class="container d-flex flex-column">
+                    <h1>Share for good</h1>
+                    <br />
+                    <button className="btn btn-primary" onClick={this.doSignInWithGoogle}>Sign In with Google</button>
+                </div>
             </div>
-        );
+        </div>
+
+    </div>
     }
+</div>
+);
+}
 }
 
 export default Auth;
