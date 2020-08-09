@@ -33,9 +33,11 @@ class NGOPosts extends Component {
         let posts = this.state.ngo_posts;
         console.log(posts);
         return (
-            <ul>
+            <div>
                 <Navbar/>
-                {
+                <div class="container">
+                <div class="row">
+                    {
                     posts.map((post) => {
                     return (
                         <div class="col-md-4">
@@ -58,7 +60,9 @@ class NGOPosts extends Component {
                         // </div>
                     )})
                 }
-            </ul>
+            </div>
+            </div>
+            </div>
         );
     }
 }

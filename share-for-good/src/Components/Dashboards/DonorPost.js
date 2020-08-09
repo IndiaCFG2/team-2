@@ -32,7 +32,9 @@ class DonorPosts extends Component {
         let posts = this.state.donor_posts;
         console.log(posts);
         return (
-            <div class="container">
+            <div>
+                <Navbar/>
+                <div class="container">
                 <div class="row">
                     {
                         posts.map((post) => {
@@ -59,6 +61,7 @@ class DonorPosts extends Component {
                             )
                         })
                     }
+                </div>
                 </div>
             </div>
         );

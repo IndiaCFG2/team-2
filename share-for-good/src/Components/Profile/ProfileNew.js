@@ -68,6 +68,7 @@ class ProfileNew extends Component {
                         <label htmlFor="inputND" className="sr-only">NGO / Donor</label>
                         <input type="text" value={this.state.type} onChange={this.udpateType} id="inputND" className="form-control"
                             placeholder="Enter either NGO or Donor" required />
+                            <br/>
 
                         <button className="btn btn-lg btn-primary btn-block" onClick={this.onSubmit}>Submit</button>
                         <p className="mt-5 mb-3 text-muted">"</p>

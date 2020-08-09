@@ -72,7 +72,7 @@ componentDidMount() {
                 {this.state.loggedIn ?
                         <Profile />
                         :
-                    <div class="container d-flex justify-content-center">
+                    <div class="container d-flex justify-content-center container-img">
                         <div class="row ">
                             <div class="container d-flex flex-column">
                                 <h1>Share for good</h1>
@@ -81,7 +81,6 @@ componentDidMount() {
                             </div>
                         </div>
                     </div>
-                
                 }
             </div>
         );

@@ -12,6 +12,7 @@ import DonorPostsNew from './Components/Dashboards/DonorPostsNew';
 import NGOPostsNew from './Components/Dashboards/NGOPostsNew';
 import {auth} from './Components/firebase';
 import Navbar from './Components/Navbar';
+import background from '../src/Components/Auth/back.jpg';
 
 function App() {
     return (
