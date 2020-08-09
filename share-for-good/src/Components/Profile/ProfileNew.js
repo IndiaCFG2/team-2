@@ -3,6 +3,7 @@ import { db, auth } from '../firebase';
 import { render } from '@testing-library/react';
 import 'bootstrap/dist/css/bootstrap.css';
 import Navbar from '../Navbar';
+import './style.css';
 
 // Put any other imports below so that CSS from your
 // components takes precedence over default styles.
@@ -61,7 +62,7 @@ class ProfileNew extends Component {
         return (
             <div>
                 {auth.currentUser?
-                <div className="container">
+                <div className="container container-img">
                         <label htmlFor="inputEmail" className="sr-only">Address</label>
                         <input type="address" id="inputAddress" value={this.state.address} className="form-control"
                             placeholder="Address" onChange={this.udpateAddress}/>

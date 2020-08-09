@@ -47,7 +47,8 @@ class NGOPosts extends Component {
                             <div class="card-body">
                                 <h5 class="card-title">{post.title}</h5>
                                 <p class="card-text">{post.description}</p>
-                                <p class="card-text">{post.posted_by}</p>
+                                <p class="card-text">Quantity: {post.quantity}</p>
+                                <p class="card-text">By: {post.posted_by}</p>
                             </div>
                         </div>
                     </div>
