@@ -1,0 +1,11 @@
+.box{
+    
+    background:linear-gradient(rgba(250,0,0,0.5),transparent);
+    background-color:orange /*this your primary color*/
+  }
+
+  .container-img{
+    background-image: url('./sharing_is_caring.jpg');
+    height: 100vh;
+    width: 100vh;
+  }
