@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {db, auth}from '../firebase';
 import { render } from '@testing-library/react';
+import Navbar from '../Navbar';
 
 class NGOPosts extends Component {
     
@@ -33,6 +34,7 @@ class NGOPosts extends Component {
         console.log(posts);
         return (
             <ul>
+                <Navbar/>
                 {
                     posts.map((post) => {
                     return (

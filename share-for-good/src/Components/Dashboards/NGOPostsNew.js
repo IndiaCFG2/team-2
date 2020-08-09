@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { db, auth, storage } from '../firebase';
 import { render } from '@testing-library/react';
 import firebase from 'firebase';
+import Navbar from '../Navbar';
 
 
 class NGOPostsNew extends Component {
@@ -15,7 +16,8 @@ class NGOPostsNew extends Component {
             video_url: '',
             quantity: '',
             description: '',
-            donor_id: ''
+            donor_id: '',
+            category: ''
         }
     }
 
@@ -67,7 +69,8 @@ class NGOPostsNew extends Component {
                 video_url: this.state.video_url,
                 quantity: this.state.quantity,
                 description: this.state.description,
-                timestamp: firebase.database.ServerValue.TIMESTAMP
+                timestamp: firebase.database.ServerValue.TIMESTAMP,
+                category: this.state.category
             }).then((docRef) => {
                 this.props.history.push('/ngo/posts');
             })
@@ -79,6 +82,7 @@ class NGOPostsNew extends Component {
     render() {
         return (
             <div>
+                <Navbar/>
                 <div className="container">
                     <div className="card">
                         <h5 className="card-header">Post Your Requirements!</h5>
@@ -95,7 +99,7 @@ class NGOPostsNew extends Component {
                                     <input className="form-control-file" type="file" id="img" name="img" accept="image/*" onChange={this.handleImageChange}></input>
                                     <button onClick={this.handleUpload}>Upload</button>
                                     <label>Select</label>
-                                    <select value={this.state.topic} onChange={this.handleTopicChange}>
+                                    <select value={this.state.topic}  onChange={(e)=>{this.setState({category: e.target.value})}}>
                                         <option>Medical</option>
                                         <option>Electronic Devices</option>
                                         <option>Stationary</option>

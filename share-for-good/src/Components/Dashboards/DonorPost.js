@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {db, auth} from '../firebase';
 import { render } from '@testing-library/react';
+import Navbar from '../Navbar';
 
 class DonorPosts extends Component {
     
@@ -31,6 +32,7 @@ class DonorPosts extends Component {
         let posts = this.state.donor_posts;
         return (
             <ul>
+                <Navbar/>
                 {
                     posts.map((post) => {
                     return (

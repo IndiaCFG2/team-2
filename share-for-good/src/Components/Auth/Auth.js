@@ -4,6 +4,8 @@ import { auth } from '../firebase';
 import Home from '../Home/Home'
 import { render } from '@testing-library/react';
 import './style.css';
+import Profile from '../Profile/Profile';
+import Navbar from '../Navbar';
 
 class Auth extends Component {
 
@@ -33,11 +35,8 @@ class Auth extends Component {
                             userEmail: socialAuthUser.user.email,
                             userId: socialAuthUser.user.uid
                         }, () => {
-                            this.props.history.push({
-                                pathname: '/profile/new',
-                                search: '?query=abc',
-                                state: { details: this.state }
-                            })
+                            console.log(this.state);
+                            this.props.history.push("/profile/new");
                         });
                     })
                     .catch(error => {
@@ -69,8 +68,9 @@ class Auth extends Component {
     render() {
         return (
             <div>
+                <Navbar/>
                 {this.state.loggedIn ?
-                    <Home />
+                    <Profile />
                     :
                     <button onClick={this.doSignInWithGoogle}>Sign In with Google</button>
                     

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { render } from '@testing-library/react';
-import {db} from '../firebase';
+import {db, auth} from '../firebase';
 import 'bootstrap/dist/css/bootstrap.css';
+import Navbar from '../Navbar';
 
 class Profile extends Component {
 
@@ -9,48 +10,35 @@ class Profile extends Component {
 
         super(props);
         this.state = {
-            name: '',
-            email: '',
-            phone: '',
-            address: ''
+            name: 'NULL',
+            email: 'NULL',
+            type: 'NULL',
+            address: 'NULL'
         }
     }
 
     componentDidMount() {
-        // db.collection('users').get().then((querySnapshot) => {
-        //     // let profile_details = [];
-        //     querySnapshot.forEach((doc) => {
-        //         // let profile;
-        //         // profile = doc.data();
-        //         db.collection('users').doc('AOGNyuzQ4tNom2IZgX8n6bUlRuA2').get().then((querySnap) => {
-        //             const data = querySnap.docs.map(doc => doc.data());
-        //             this.setState({
-        //                 name: data.name,
-        //                 email: data.email,
-        //                 phone: data.phone,
-        //                 address: data.address
-        //             })
-        //         });
-        //         // profile_details.push(profile);
-        //     })
-        //     // this.setState({ngo_posts: profile_details});
-        // });
-        db.collection("users").doc('AOGNyuzQ4tNom2IZgX8n6bUlRuA2')
-            .get()
-            .then(querySnapshot => {
+        if(auth.currentUser) {
+          console.log(auth.currentUser);
+          db.collection("auth").doc(auth.currentUser.uid)
+              .get()
+              .then(querySnapshot => {
+                // console.log();
                 const data = querySnapshot.data();
-                this.setState({
-                    name: data.name,
-                    email: data.email,
-                    phone: data.phone,
-                    address: data.address
-                }) // array of cities objects
-            });
+                  this.setState({
+                      name: auth.currentUser.displayName,
+                      email: auth.currentUser.email,
+                      address: data.address,
+                      type: data.type
+                  }) // array of cities objects
+              });
+            }
     }
 
     render() {
         return (
             <div>
+              <Navbar/>
                <div className="container d-flex justify-content-center">
                    <div class="row">
                         <div class="card">
@@ -61,25 +49,25 @@ class Profile extends Component {
                                 <div class="form-group row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">Email</label>
                                     <div class="col-sm-8">
-                                      <input type="text" disabled readonly class="form-control" id="staticEmail" />
+                                      <input type="text" disabled value={this.state.email} readonly class="form-control" id="staticEmail" />
                                     </div>
                                   </div>
                                   <div class="form-group row">
-                                    <label for="inputPassword" class="col-sm-4 col-form-label">Password</label>
+                                    <label for="inputPassword" class="col-sm-4 col-form-label">Name</label>
                                     <div class="col-sm-8">
-                                      <input type="password" class="form-control" />
+                                      <input type="text" value={this.state.name} class="form-control" />
                                     </div>
                                   </div>
                                   <div class="form-group row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Email</label>
+                                    <label for="staticEmail" class="col-sm-4 col-form-label">Address</label>
                                     <div class="col-sm-8">
-                                      <input type="text"  readonly class="form-control" id="staticEmail" value="email@example.com"/>
+                                      <input type="text" value={this.state.address} readonly class="form-control" id="staticEmail"/>
                                     </div>
                                   </div>
                                   <div class="form-group row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Email</label>
+                                    <label for="staticEmail" class="col-sm-4 col-form-label">Type</label>
                                     <div class="col-sm-8">
-                                      <input type="text" disabled readonly class="form-control" id="staticEmail" value="email@example.com"/>
+                                      <input type="text" value={this.state.type} disabled readonly class="form-control" id="staticEmail"/>
                                     </div>
                                   </div>
                             </div>
