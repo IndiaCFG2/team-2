@@ -28,6 +28,10 @@ class DonorPosts extends Component {
         });
     }
 
+    chat = () => {
+        this.props.history.push('/chat');
+    }
+
     render() {
         let posts = this.state.donor_posts;
         console.log(posts);
@@ -48,6 +52,7 @@ class DonorPosts extends Component {
                                             <p class="card-text">{post.description}</p>
                                             <p class="card-text">Quantity: {post.quantity}</p>
                                             <p class="card-text">By: {post.posted_by}</p>
+                                            <button onClick={this.chat}>Chat</button>
                                         </div>
                                     </div>
                                 </div>

@@ -53,7 +53,7 @@ class Navbar extends Component {
                             </li>
                             {this.state.type == 'NGO'?
                             <li className="nav-item">
-                                <Link className="nav-link" to='/ngo/posts/new'>New Posts</Link>
+                                <Link className="nav-link" to='/ngo/posts/new'>Add Posts</Link>
                             </li>
                             :
                             <li className="nav-item">
