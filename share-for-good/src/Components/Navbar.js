@@ -57,7 +57,7 @@ class Navbar extends Component {
                             </li>
                             :
                             <li className="nav-item">
-                                <Link className="nav-link" to='/donor/posts/new'>New Posts</Link>
+                                <Link className="nav-link" to='/donor/posts/new'>Add Posts</Link>
                             </li>
                             }
                             <li className="nav-item dropdown">
