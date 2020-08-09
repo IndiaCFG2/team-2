@@ -55,18 +55,20 @@ class ProfileNew extends Component {
     render() {
         return (
             <div>
-                <div className="container">
+                <div className="container ">
                     <form className="form-signin">
 
                         <label for="inputEmail" className="sr-only">Address</label>
                         <input type="address" id="inputAddress" value={this.state.address} className="form-control"
                             placeholder="Address" onChange={this.udpateAddress} required autofocus />
+                            <br/>
                         <label for="inputND" className="sr-only">NGO / Donor</label>
                         <input type="text" value={this.state.type} onChange={this.udpateType} id="inputND" className="form-control"
                             placeholder="Enter either NGO or Donor" required />
+                            <br/>
 
                         <button className="btn btn-lg btn-primary btn-block" onClick={this.onSubmit}>Submit</button>
-                        <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+                    
                     </form>
                 </div>
             </div>
