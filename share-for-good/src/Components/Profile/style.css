@@ -1,0 +1,7 @@
+.container-img{
+    padding-top: 200px;
+    color:white; 
+    background-image: url('./back.jpg');
+    height: 500px;
+    width: 1000;
+  }
